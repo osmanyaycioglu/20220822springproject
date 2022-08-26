@@ -1,0 +1,58 @@
+app:
+  commit: commit1
+  connection:
+    connectionTimeout: 1000
+    host: 192.168.1.1
+    port: 1010
+    retry-count: 10
+  connection-list:
+  - connectionTimeout: 1000
+    host: 192.168.1.1
+    port: 1010
+    retry-count: 10
+  - connectionTimeout: 1002
+    host: 192.168.1.2
+    port: 1012
+    retry-count: 12
+  connection-map:
+    connection1:
+      connectionTimeout: 1000
+      host: 192.168.1.1
+      port: 1010
+      retry-count: 10
+    xyz:
+      connectionTimeout: 1002
+      host: 192.168.1.2
+      port: 1012
+      retry-count: 12
+    con2:
+      host: test.com
+      port: 9090
+      retry-count: 20
+      connection-timeout: 1000
+    test:
+      host: 1.0.0.1
+  info: benim app
+  port: 9090
+  version: 1.0.0
+server:
+  port: 9090
+  http2:
+    enabled: false
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: ''
+    url: jdbc:h2:mem:testdb
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
